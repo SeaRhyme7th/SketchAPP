@@ -11,7 +11,7 @@ A simple Sketch-Based Image Retrieval web application. The system uses Flask for
 
 ## Retrieving
 
-The system applies Siamese network based on T.Bui et al's paper "[Compact Descriptors for Sketch-based Image Retrieval using a Triplet loss Convolutional Neural Network](https://doi.org/10.1016/j.cviu.2017.06.007)"[[Repo](https://github.com/TuBui/Triplet_Loss_SBIR)|[Page](http://www.cvssp.org/data/Flickr25K/CVIU16.html)]. All retrieving code comes from [jjkislele/SketchTriplet](!https://github.com/jjkislele/SketchTriplet).
+The system applies Siamese network based on T.Bui et al's paper "[Compact Descriptors for Sketch-based Image Retrieval using a Triplet loss Convolutional Neural Network](https://doi.org/10.1016/j.cviu.2017.06.007)"[[Repo](https://github.com/TuBui/Triplet_Loss_SBIR)|[Page](http://www.cvssp.org/data/Flickr25K/CVIU16.html)]. All retrieving code comes from [jjkislele/SketchTriplet](https://github.com/jjkislele/SketchTriplet).
 
 ## Web application
 
