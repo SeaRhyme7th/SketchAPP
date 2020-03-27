@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SBIR DEMO</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_584725_0nyjbeaxjw2ep14i.css">
+    <link rel="stylesheet" href="/static/css/page_style.css">
+    <link rel="stylesheet" href="/static/css/canvas_style.css">
+</head>
+<body>
+
+
+<canvas id="drawing-board" style="border:3px solid #999; display:block; margin:0 auto;"></canvas>
+<div class="header">
+    <h1 style="text-align:center;margin:0 auto"> SBIR Demo</h1>
+    <p>Build by JJK</p>
+</div>
+<div id="range-wrap"><input type="range" id="range" min="1" max="30" value="5" title="调整笔刷粗细"></div>
+<div class="tools">
+    <button id="brush" class="active" title="画笔"><i class="iconfont icon-qianbi"></i></button>
+    <!--<input type="button" id="brush" class="active" title="画笔">-->
+    <button id="eraser" title="橡皮擦"><i class="iconfont icon-xiangpi"></i></button>
+    <button id="clear" title="清空"><i class="iconfont icon-qingchu"></i></button>
+    <button id="undo" title="撤销"><i class="iconfont icon-chexiao"></i></button>
+
+    <form action="" enctype='multipart/form-data' method='POST'>
+        <button id="save" title="保存"><i class="iconfont icon-fuzhi"></i></button>
+        <input type="text" name="sketchUpload" id="sketchUpload" value="" style="display:none"/>
+    </form>
+
+    <button id="upload" title="upload">
+        <div align="center" style="margin:10px 0px 0px 3px">
+            <embed src="static/css/upload.svg" type="image/svg+xml" width="30" height="30"/>
+        </div>
+    </button>
+
+    <form action="" enctype='multipart/form-data' method='POST' id="upload_form">
+        <input type="file" name="uploadSketch" id="uploadSketch" style="display:none" accept="image/png, image/jpg">
+        <input type="text" name="uploadFlag" id="uploadFlag" value="0" style="display:none"/>
+    </form>
+</div>
+</body>
+<script src="/static/js/main.js"></script>
+</html>
