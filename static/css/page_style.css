@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+.container{
+    margin:0 auto;
+    width:300px;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    -ms-flex: 20%; /* IE10 */
+    flex: 20%;
+    background-color: #f1f1f1;
+    padding: 20px 0px 10px 20px;
+}
+
+/* 主要的内容区域 */
+.main {
+    -ms-flex: 80%; /* IE10 */
+    flex: 80%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 底部 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+.pic_list_con{
+            width:1100px;
+            height: 550px;
+            border:1px solid #ddd;
+            /*多出来的ul要剪掉*/
+            overflow:hidden;
+        }
+        .pic_list_con h3{
+            width:918px;
+            height:50px;
+            border-bottom: 1px solid #ddd;
+            /*是h3居中，不是h3中的文字居中哦！*/
+            margin:0 auto;
+        }
+        .pic_list_con h3 span{
+            /*内联元素转为内联块元素，支持全部样式*/
+            display:inline-block;
+            height:50px;
+            border-bottom: 2px solid red;
+            font: 18px/50px 'Microsoft YaHei UI';
+            padding:0 15px;
+        }
+        .pic_list_con ul{
+            width: 1050px;
+            margin:20px 0 13px 20px;
+        }
+        .pic_list_con ul li{
+            width:160px;
+            height:160px;
+            list-style-type: none;
+            float:left;
+            margin:5px 10px 5px 5px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 3px rgba(50,50,50,0.4);
+
+            }
+        .pic_list_con ul li img{
+            height: 130px;
+            max-width: 150px;
+            display:block;
+            text-align:center;
+            margin: 0px auto;
+            padding: 15px 0 0 0;
+            }
+        .pic_list_con ul li span{
+            display:block;
+            line-height:20px;
+            text-align:center;
+            font-size:x-small;
+            }
