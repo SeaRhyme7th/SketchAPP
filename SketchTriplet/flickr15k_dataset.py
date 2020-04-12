@@ -1,11 +1,7 @@
 import os
 import os.path
-from random import choice
-import random
-from PIL import Image
-import torchvision.transforms as transforms
 from torch.utils.data import Dataset
-from torch.utils.data import DataLoader
+
 
 class flickr15k_dataset_lite(Dataset):
     def __init__(self, root='./static/images'):

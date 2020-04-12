@@ -1,5 +1,6 @@
 import torch.nn as nn
 
+
 class BranchNet(nn.Module):
     def __init__(self, num_feat=100):
         super(BranchNet, self).__init__()
@@ -102,6 +103,7 @@ class BranchNet(nn.Module):
     def get_branch(self, x):
         return self.forward(x)
 
+
 class SketchTriplet(nn.Module):
     def __init__(self, branch_net):
         super(SketchTriplet, self).__init__()
@@ -168,4 +170,3 @@ class SketchTriplet(nn.Module):
 
     def get_branch_photo(self, x):
         return self.branch_net(x)
-
