@@ -49,7 +49,7 @@ def get_real_path(retrieval_list):
 def retrieval(net, sketch_path, dataset):
     sketch_src = Image.open(sketch_path).convert('RGB')
     feat_s = extract_feat_sketch(net, sketch_src)
-    feat_photo_path = '../SketchTriplet/out_feat/flickr15k_1904041458/feat.npz'
+    feat_photo_path = '../SketchTriplet/out_feat_flickr15k_1904041458/feat_photo.npz'
     feat_photo = np.load(feat_photo_path)
 
     feat_p = feat_photo['feat']

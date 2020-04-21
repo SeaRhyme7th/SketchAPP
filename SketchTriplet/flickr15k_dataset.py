@@ -16,7 +16,7 @@ class flickr15k_dataset_lite(Dataset):
         file = open(self.gt_path)
         for line in file:
             sketch_cls = line.split()[0]
-            img_path = line.split()[1][:-4] + '.jpg'
+            img_path = line.split()[1][:-4] + '.png'
             img_cls = img_path.split('/')[0]
             img_name = img_path.split('/')[1][:-4]
             img_path = os.path.join(self.img_set_path, img_path)
