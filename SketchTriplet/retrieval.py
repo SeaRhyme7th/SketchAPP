@@ -2,6 +2,7 @@ from PIL import Image
 import numpy as np
 import torchvision.transforms as transforms
 from torch.autograd import Variable
+import torch
 
 
 def extract_feat_sketch(net, sketch_src):
@@ -14,7 +15,9 @@ def extract_feat_sketch(net, sketch_src):
         normalize
     ])
     sketch_src = transform(sketch_src)
-    sketch = Variable(sketch_src.unsqueeze(0)).cuda()
+    sketch = Variable(sketch_src.unsqueeze(0))
+    if torch.cuda.is_available():
+        sketch = sketch.cuda()
     feat = net.get_branch_sketch(sketch)
     feat = feat.cpu().data.numpy()
     return feat
@@ -26,7 +29,7 @@ def get_real_path(retrieval_list):
     for i in range(5):
         real_list = []
         for j in range(18):
-            ori_path = retrieval_list[i * 5 + j]
+            ori_path = retrieval_list[i * 18 + j]
             real_path = './images/dataset/' + ori_path.split('/')[-2] + '/' + ori_path.split('/')[-1][:-4] + '.png'
             name = ori_path.split('/')[-2] + '/' + ori_path.split('/')[-1][:-4]
             real_list.append((real_path, name))
@@ -36,7 +39,7 @@ def get_real_path(retrieval_list):
     path_dic = []
     for i in range(90):
         tmp = {}
-        ori_path = retrieval_list[i * 5 + j]
+        ori_path = retrieval_list[i]
         real_path = './images/dataset/' + ori_path.split('/')[-2] + '/' + ori_path.split('/')[-1][:-4] + '.png'
         name = ori_path.split('/')[-2] + '/' + ori_path.split('/')[-1][:-4]
         tmp['path'] = real_path
@@ -46,10 +49,10 @@ def get_real_path(retrieval_list):
     return real_list_set, path_dic
 
 
-def retrieval(net, sketch_path, dataset):
+def retrieval(net, sketch_path):
     sketch_src = Image.open(sketch_path).convert('RGB')
     feat_s = extract_feat_sketch(net, sketch_src)
-    feat_photo_path = '../SketchTriplet/out_feat_flickr15k_1904041458/feat_photo.npz'
+    feat_photo_path = './SketchTriplet/out_feat_flickr15k_1904041458/feat_photo.npz'
     feat_photo = np.load(feat_photo_path)
 
     feat_p = feat_photo['feat']

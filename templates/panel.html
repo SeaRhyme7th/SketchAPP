@@ -22,30 +22,6 @@
                  style="border:3px solid #999;margin:5px 0px 10px 0px"
                  alt="error: load image"/>
         </div>
-        <h2 style="margin:15px 0px 5px 0px">Pred result</h2>
-        <div style="height:200px;" align="center">
-            <img src="{{ url_for('static', filename= './sketch_tmp/pred.png',_t=val1) }}"
-                 width="200" height="200"
-                 alt="error: load image"/>
-        </div>
-        <h5>Part info:</h5>
-        <div style="margin:5px 0 0 60px">
-            <table width="160">
-                {% for item in part_info %}
-                <tr align="left">
-                    <th>
-                        <h5>{{ item[0] }}</h5>
-                    </th>
-                    <th>
-                        <h5>{{ item[1] }}</h5>
-                    </th>
-                    <th>
-                        <i style="width:15px;height:15px;border-radius:50%;background-color:rgb({{item[2]}},{{item[3]}},{{item[4]}});display:block"></i>
-                    </th>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
     </div>
 
     <div class="main">
@@ -69,7 +45,7 @@
                         </a>
                     </th>
                     <th>
-                        <a style="text-align:center; margin:0 auto" class="button" href="{{url_for('upload')}}">Return!!!</a>
+                        <a style="text-align:center; margin:0 auto" class="button" href="{{url_for('upload')}}">返回</a>
                     </th>
                 </tr>
             </table>
