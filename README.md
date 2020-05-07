@@ -16,3 +16,5 @@ The system applies Siamese network based on T.Bui et al's paper "[Compact Descri
 ## Web application
 
 ==under construction==
+
+![example](https://github.com/SeaRhyme7th/SketchAPP/blob/master/example.gif)
